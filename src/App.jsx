@@ -5,8 +5,9 @@ import {TodoForm,TodoItem} from './Components';
 function App() {
   const [todoList,setTodoList]=useState([]);
   const addTodo=(title)=>{
-    setTodoList((prevTodoList)=>[{ id:Date.now(),title},...prevTodoList])
+    setTodoList((prevTodoList)=>[...prevTodoList,{ id:Date.now(),title}])
    
+    console.log(title);
     
     //todoList is an array of objects so we can use spread operator to add objects in new array
   }
@@ -41,7 +42,7 @@ function App() {
            {todoList.map((todo)=>(
             <div key={todo.id}
              className="w-full">
-                <TodoItem todo={todo} /> //object passed as props
+                <TodoItem todo={todo} />
             </div>
            ))}
         </div>

@@ -9,7 +9,7 @@ function TodoForm() {
         e.preventDefault();
        if(!title) return
 
-       addTodo({title,isDone:false});
+       addTodo(title);
        setTitle("");
     }
     return (
